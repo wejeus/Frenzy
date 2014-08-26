@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5838E4D19AD272500A51A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5838E4C19AD272500A51A95 /* AppDelegate.swift */; };
+		D5838E4F19AD272500A51A95 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D5838E4E19AD272500A51A95 /* GameScene.sks */; };
+		D5838E5119AD272500A51A95 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5838E5019AD272500A51A95 /* GameScene.swift */; };
+		D5838E5319AD272500A51A95 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5838E5219AD272500A51A95 /* GameViewController.swift */; };
+		D5838E5619AD272500A51A95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5838E5419AD272500A51A95 /* Main.storyboard */; };
+		D5838E5819AD272500A51A95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5838E5719AD272500A51A95 /* Images.xcassets */; };
+		D5838E6419AD272500A51A95 /* FrenzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5838E6319AD272500A51A95 /* FrenzyTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5838E5E19AD272500A51A95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5838E3F19AD272500A51A95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5838E4619AD272500A51A95;
+			remoteInfo = Frenzy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5838E4719AD272500A51A95 /* Frenzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frenzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5838E4B19AD272500A51A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5838E4C19AD272500A51A95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5838E4E19AD272500A51A95 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		D5838E5019AD272500A51A95 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D5838E5219AD272500A51A95 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D5838E5519AD272500A51A95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5838E5719AD272500A51A95 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D5838E5D19AD272500A51A95 /* FrenzyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrenzyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5838E6219AD272500A51A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5838E6319AD272500A51A95 /* FrenzyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenzyTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5838E4419AD272500A51A95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5838E5A19AD272500A51A95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5838E3E19AD272500A51A95 = {
+			isa = PBXGroup;
+			children = (
+				D5838E4919AD272500A51A95 /* Frenzy */,
+				D5838E6019AD272500A51A95 /* FrenzyTests */,
+				D5838E4819AD272500A51A95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5838E4819AD272500A51A95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5838E4719AD272500A51A95 /* Frenzy.app */,
+				D5838E5D19AD272500A51A95 /* FrenzyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5838E4919AD272500A51A95 /* Frenzy */ = {
+			isa = PBXGroup;
+			children = (
+				D5838E4C19AD272500A51A95 /* AppDelegate.swift */,
+				D5838E4E19AD272500A51A95 /* GameScene.sks */,
+				D5838E5019AD272500A51A95 /* GameScene.swift */,
+				D5838E5219AD272500A51A95 /* GameViewController.swift */,
+				D5838E5419AD272500A51A95 /* Main.storyboard */,
+				D5838E5719AD272500A51A95 /* Images.xcassets */,
+				D5838E4A19AD272500A51A95 /* Supporting Files */,
+			);
+			path = Frenzy;
+			sourceTree = "<group>";
+		};
+		D5838E4A19AD272500A51A95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5838E4B19AD272500A51A95 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5838E6019AD272500A51A95 /* FrenzyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5838E6319AD272500A51A95 /* FrenzyTests.swift */,
+				D5838E6119AD272500A51A95 /* Supporting Files */,
+			);
+			path = FrenzyTests;
+			sourceTree = "<group>";
+		};
+		D5838E6119AD272500A51A95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5838E6219AD272500A51A95 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5838E4619AD272500A51A95 /* Frenzy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5838E6719AD272500A51A95 /* Build configuration list for PBXNativeTarget "Frenzy" */;
+			buildPhases = (
+				D5838E4319AD272500A51A95 /* Sources */,
+				D5838E4419AD272500A51A95 /* Frameworks */,
+				D5838E4519AD272500A51A95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Frenzy;
+			productName = Frenzy;
+			productReference = D5838E4719AD272500A51A95 /* Frenzy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5838E5C19AD272500A51A95 /* FrenzyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5838E6A19AD272500A51A95 /* Build configuration list for PBXNativeTarget "FrenzyTests" */;
+			buildPhases = (
+				D5838E5919AD272500A51A95 /* Sources */,
+				D5838E5A19AD272500A51A95 /* Frameworks */,
+				D5838E5B19AD272500A51A95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5838E5F19AD272500A51A95 /* PBXTargetDependency */,
+			);
+			name = FrenzyTests;
+			productName = FrenzyTests;
+			productReference = D5838E5D19AD272500A51A95 /* FrenzyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5838E3F19AD272500A51A95 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Rocket Labs";
+				TargetAttributes = {
+					D5838E4619AD272500A51A95 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					D5838E5C19AD272500A51A95 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = D5838E4619AD272500A51A95;
+					};
+				};
+			};
+			buildConfigurationList = D5838E4219AD272500A51A95 /* Build configuration list for PBXProject "Frenzy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5838E3E19AD272500A51A95;
+			productRefGroup = D5838E4819AD272500A51A95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5838E4619AD272500A51A95 /* Frenzy */,
+				D5838E5C19AD272500A51A95 /* FrenzyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5838E4519AD272500A51A95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5838E5819AD272500A51A95 /* Images.xcassets in Resources */,
+				D5838E4F19AD272500A51A95 /* GameScene.sks in Resources */,
+				D5838E5619AD272500A51A95 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5838E5B19AD272500A51A95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5838E4319AD272500A51A95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5838E5119AD272500A51A95 /* GameScene.swift in Sources */,
+				D5838E5319AD272500A51A95 /* GameViewController.swift in Sources */,
+				D5838E4D19AD272500A51A95 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5838E5919AD272500A51A95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5838E6419AD272500A51A95 /* FrenzyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5838E5F19AD272500A51A95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5838E4619AD272500A51A95 /* Frenzy */;
+			targetProxy = D5838E5E19AD272500A51A95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5838E5419AD272500A51A95 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5838E5519AD272500A51A95 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5838E6519AD272500A51A95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5838E6619AD272500A51A95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5838E6819AD272500A51A95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Frenzy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D5838E6919AD272500A51A95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Frenzy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D5838E6B19AD272500A51A95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FrenzyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frenzy.app/Frenzy";
+			};
+			name = Debug;
+		};
+		D5838E6C19AD272500A51A95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FrenzyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frenzy.app/Frenzy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5838E4219AD272500A51A95 /* Build configuration list for PBXProject "Frenzy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5838E6519AD272500A51A95 /* Debug */,
+				D5838E6619AD272500A51A95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5838E6719AD272500A51A95 /* Build configuration list for PBXNativeTarget "Frenzy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5838E6819AD272500A51A95 /* Debug */,
+				D5838E6919AD272500A51A95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D5838E6A19AD272500A51A95 /* Build configuration list for PBXNativeTarget "FrenzyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5838E6B19AD272500A51A95 /* Debug */,
+				D5838E6C19AD272500A51A95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5838E3F19AD272500A51A95 /* Project object */;
+}

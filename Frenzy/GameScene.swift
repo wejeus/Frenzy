@@ -8,8 +8,12 @@
 
 import CoreMotion
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene {
+    
+    var womp = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("wompwomp", ofType: "mp3"))
+    var wompwomp = AVAudioPlayer()
     
     let MAX_NUM_CIRCLES = 3
     let MAX_CIRCLE_SCALE:CGFloat = 10
@@ -29,11 +33,15 @@ class GameScene: SKScene {
     var scoreLevelMultiplier = 1.5
     var numKilled:Int = 0
     let levelCap:Int = 10
+    var lives:UILabel = UILabel()
     
     /* Setup your scene here */
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.backgroundColor = SKColor.whiteColor()
+        wompwomp = AVAudioPlayer(contentsOfURL: womp, error: nil)
+        wompwomp.prepareToPlay()
+        
         isPlaying = true
         motionManager.startDeviceMotionUpdates()
     }
@@ -41,15 +49,11 @@ class GameScene: SKScene {
     /* Called when a touch begins */
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
-            
             let location = touch.locationInNode(self)
             
             var touchedNode = self.nodeAtPoint(location)
             if touchedNode.isKindOfClass(SKShapeNode) {
-                let actionScale = SKAction.scaleBy(
-                    CGFloat(7.0),
-                    duration: 0.2
-                )
+                
                 let actionDissolve = SKAction.fadeAlphaTo(0, duration:0.2)
                 
                 let actionRemove = SKAction.runBlock({
@@ -60,10 +64,8 @@ class GameScene: SKScene {
                     println("numKilled: \(self.numKilled)")
                 })
                 
-                let chain = SKAction.sequence([actionScale, actionRemove])
-                
                 touchedNode.runAction(actionDissolve)
-                touchedNode.runAction(chain)
+                touchedNode.runAction(actionRemove)
             }
         }
     }
@@ -109,8 +111,11 @@ class GameScene: SKScene {
                     // TODO! So this clearly does not work since when we are removing the node
                     // we do animation that scale the fuck of of this fucker and this will break
                     if shapeNode.xScale > MAX_CIRCLE_SCALE {
-                        // playerLife--
-                        
+                        playerLife--
+                        wompwomp.play()
+                        shapeNode.fillColor = UIColor.redColor()
+                        shapeNode.removeFromParent()
+                        self.numCircles--;
                         if playerLife == 0 {
                             println("game over!")
                             isPlaying = false

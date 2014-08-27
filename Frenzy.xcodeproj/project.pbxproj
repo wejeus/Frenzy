@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5AC888619AE777F009A7D2A /* wompwomp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5AC888519AE777F009A7D2A /* wompwomp.mp3 */; };
 		D5838E4D19AD272500A51A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5838E4C19AD272500A51A95 /* AppDelegate.swift */; };
 		D5838E4F19AD272500A51A95 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D5838E4E19AD272500A51A95 /* GameScene.sks */; };
 		D5838E5119AD272500A51A95 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5838E5019AD272500A51A95 /* GameScene.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5AC888519AE777F009A7D2A /* wompwomp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wompwomp.mp3; sourceTree = "<group>"; };
 		D5838E4719AD272500A51A95 /* Frenzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frenzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5838E4B19AD272500A51A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5838E4C19AD272500A51A95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		D5838E4919AD272500A51A95 /* Frenzy */ = {
 			isa = PBXGroup;
 			children = (
+				B5AC888519AE777F009A7D2A /* wompwomp.mp3 */,
 				D5838E4C19AD272500A51A95 /* AppDelegate.swift */,
 				D5838E4E19AD272500A51A95 /* GameScene.sks */,
 				D5838E5019AD272500A51A95 /* GameScene.swift */,
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5AC888619AE777F009A7D2A /* wompwomp.mp3 in Resources */,
 				D5838E5819AD272500A51A95 /* Images.xcassets in Resources */,
 				D5838E4F19AD272500A51A95 /* GameScene.sks in Resources */,
 				D5838E5619AD272500A51A95 /* Main.storyboard in Resources */,
@@ -403,6 +407,7 @@
 				D5838E6919AD272500A51A95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5838E6A19AD272500A51A95 /* Build configuration list for PBXNativeTarget "FrenzyTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +416,7 @@
 				D5838E6C19AD272500A51A95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

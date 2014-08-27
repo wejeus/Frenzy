@@ -12,11 +12,15 @@ import AVFoundation
 
 class GameScene: SKScene {
     
-    var womp = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("wompwomp", ofType: "mp3"))
+    let womp = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("wompwomp", ofType: "mp3"))
     var wompwomp = AVAudioPlayer()
+    let babby = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("crybaby", ofType: "mp3"))
+    var crybaby = AVAudioPlayer()
+    let unz = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("unz", ofType: "mp3"))
+    var unzunz = AVAudioPlayer()
     
     let MAX_NUM_CIRCLES = 3
-    let MAX_CIRCLE_SCALE:CGFloat = 10
+    let MAX_CIRCLE_SCALE:CGFloat = 5
     let margin:CGFloat = 100
     
     let motionManager = CMMotionManager()
@@ -25,15 +29,16 @@ class GameScene: SKScene {
     var numCircles = 0
     
     var isPlaying:Bool = false
-    var score = 0
+    var score:Int = 0
     var playerLife = 10;
     
     var level:Int = 1
     var levelSpeed:CGFloat = 0.02
-    var scoreLevelMultiplier = 1.5
+    var scoreLevelMultiplier = 1.1
     var numKilled:Int = 0
     let levelCap:Int = 10
     var lives:UILabel = UILabel()
+    var scoreText:UILabel = UILabel()
     
     /* Setup your scene here */
     override func didMoveToView(view: SKView) {
@@ -41,7 +46,21 @@ class GameScene: SKScene {
         self.backgroundColor = SKColor.whiteColor()
         wompwomp = AVAudioPlayer(contentsOfURL: womp, error: nil)
         wompwomp.prepareToPlay()
+        crybaby = AVAudioPlayer(contentsOfURL: babby, error: nil)
+        crybaby.prepareToPlay()
+        unzunz = AVAudioPlayer(contentsOfURL: unz, error: nil)
+        unzunz.prepareToPlay()
+        unzunz.play()
         
+        lives = UILabel(frame: CGRectMake(0, 0, 200, 21))
+        lives.text = "Lives: "+String(playerLife)
+        lives.textColor = UIColor.blackColor()
+        self.view.addSubview(lives)
+        
+        scoreText = UILabel(frame: CGRectMake(200, 0, 200, 21)) // eh
+        scoreText.text = "Score: "+String(score)
+        scoreText.textColor = UIColor.blackColor()
+        self.view.addSubview(scoreText)
         isPlaying = true
         motionManager.startDeviceMotionUpdates()
     }
@@ -60,6 +79,11 @@ class GameScene: SKScene {
                     touchedNode.removeFromParent()
                     self.numCircles--;
                     self.numKilled++
+                    self.score++
+                    // this multiplier is kind of aggressive
+                    // var actualScore:Double = Double(Double(self.score) * self.scoreLevelMultiplier)
+                    // self.score = Int(actualScore)
+                    self.scoreText.text = "Score: "+String(self.score)
                     
                     println("numKilled: \(self.numKilled)")
                 })
@@ -112,18 +136,23 @@ class GameScene: SKScene {
                     // we do animation that scale the fuck of of this fucker and this will break
                     if shapeNode.xScale > MAX_CIRCLE_SCALE {
                         playerLife--
+                        lives.text = "Lives: "+String(playerLife)
                         wompwomp.play()
                         shapeNode.fillColor = UIColor.redColor()
                         shapeNode.removeFromParent()
                         self.numCircles--;
                         if playerLife == 0 {
                             println("game over!")
+                            unzunz.stop() // :o
+                            crybaby.play() // :(
                             isPlaying = false
                             break
                         }
                     }
                 }
             }
+        } else {
+            // SHOW ALERT HERE OR SOMETHING
         }
     }
 }

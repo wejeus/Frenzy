@@ -132,8 +132,6 @@ class GameScene: SKScene {
                     
                     // test if circle have exploded
                     
-                    // TODO! So this clearly does not work since when we are removing the node
-                    // we do animation that scale the fuck of of this fucker and this will break
                     if shapeNode.xScale > MAX_CIRCLE_SCALE {
                         playerLife--
                         lives.text = "Lives: "+String(playerLife)

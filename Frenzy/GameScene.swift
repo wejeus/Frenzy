@@ -206,11 +206,9 @@ class GameScene: SKScene {
                 let circle = SKShapeNode(circleOfRadius: 15)
                 circle.name = "circle"
                 
-                // TODO: Kan vi fixa så att färgerna blir mer färgstarka här? De ser så matta och tråkiga ut!!!!!!
-                circle.fillColor = SKColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+                circle.fillColor = SKColor(hue: CGFloat(arc4random_uniform(255)) / 255.0, saturation: 0.9, brightness: 0.8, alpha: 1.0)
+                circle.strokeColor = SKColor(hue: CGFloat(arc4random_uniform(255)) / 255.0, saturation: 0.9, brightness: 0.8, alpha: 1.0)
                 
-                circle.strokeColor = SKColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
-
                 circle.glowWidth = 1.0
                 circle.lineWidth = 1.0
                 circle.antialiased = true

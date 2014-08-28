@@ -64,7 +64,7 @@ class GameScene: SKScene {
         lives.textColor = UIColor.whiteColor()
         self.view.addSubview(lives)
         
-        scoreText = UILabel(frame: CGRectMake(200, 0, 200, 21)) // eh
+        scoreText = UILabel(frame: CGRectMake(200, 0, 400, 21)) // eh
         scoreText.text = "Score: "+String(score)
         scoreText.textColor = UIColor.whiteColor()
         scoreText.backgroundColor = UIColor.blueColor()

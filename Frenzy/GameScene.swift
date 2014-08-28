@@ -42,6 +42,13 @@ class GameScene: SKScene {
     
     /* Setup your scene here */
     override func didMoveToView(view: SKView) {
+        var bg = SKSpriteNode(imageNamed: "water.jpg")
+        
+        bg.anchorPoint = CGPoint(x: 0, y: 0)
+        bg.size = self.size
+        bg.zPosition = -2
+        self.addChild(bg)
+        
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.backgroundColor = SKColor.whiteColor()
         wompwomp = AVAudioPlayer(contentsOfURL: womp, error: nil)
@@ -53,13 +60,15 @@ class GameScene: SKScene {
         unzunz.play()
         
         lives = UILabel(frame: CGRectMake(0, 0, 200, 21))
+        lives.backgroundColor = UIColor.blueColor()
         lives.text = "Lives: "+String(playerLife)
-        lives.textColor = UIColor.blackColor()
+        lives.textColor = UIColor.whiteColor()
         self.view.addSubview(lives)
         
         scoreText = UILabel(frame: CGRectMake(200, 0, 200, 21)) // eh
         scoreText.text = "Score: "+String(score)
-        scoreText.textColor = UIColor.blackColor()
+        scoreText.textColor = UIColor.whiteColor()
+        scoreText.backgroundColor = UIColor.blueColor()
         self.view.addSubview(scoreText)
         isPlaying = true
         motionManager.startDeviceMotionUpdates()

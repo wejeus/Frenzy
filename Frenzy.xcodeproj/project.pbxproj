@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B55A3F4519AF7FAD0045B10D /* water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B55A3F4419AF7FAD0045B10D /* water.jpg */; };
 		B5AC888619AE777F009A7D2A /* wompwomp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5AC888519AE777F009A7D2A /* wompwomp.mp3 */; };
 		B5AC888919AE7B0B009A7D2A /* crybaby.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5AC888719AE7B0B009A7D2A /* crybaby.mp3 */; };
 		B5AC888A19AE7B0B009A7D2A /* unz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5AC888819AE7B0B009A7D2A /* unz.mp3 */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B55A3F4419AF7FAD0045B10D /* water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = water.jpg; sourceTree = "<group>"; };
 		B5AC888519AE777F009A7D2A /* wompwomp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wompwomp.mp3; sourceTree = "<group>"; };
 		B5AC888719AE7B0B009A7D2A /* crybaby.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crybaby.mp3; sourceTree = "<group>"; };
 		B5AC888819AE7B0B009A7D2A /* unz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = unz.mp3; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D5838E4C19AD272500A51A95 /* AppDelegate.swift */,
 				D5838E4E19AD272500A51A95 /* GameScene.sks */,
 				D5838E5019AD272500A51A95 /* GameScene.swift */,
+				B55A3F4419AF7FAD0045B10D /* water.jpg */,
 				D5838E5219AD272500A51A95 /* GameViewController.swift */,
 				D5838E5419AD272500A51A95 /* Main.storyboard */,
 				D5838E5719AD272500A51A95 /* Images.xcassets */,
@@ -207,6 +210,7 @@
 				B5AC888A19AE7B0B009A7D2A /* unz.mp3 in Resources */,
 				B5AC888619AE777F009A7D2A /* wompwomp.mp3 in Resources */,
 				D5838E5819AD272500A51A95 /* Images.xcassets in Resources */,
+				B55A3F4519AF7FAD0045B10D /* water.jpg in Resources */,
 				B5AC888919AE7B0B009A7D2A /* crybaby.mp3 in Resources */,
 				D5838E4F19AD272500A51A95 /* GameScene.sks in Resources */,
 				D5838E5619AD272500A51A95 /* Main.storyboard in Resources */,

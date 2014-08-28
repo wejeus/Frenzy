@@ -39,6 +39,8 @@ class GameScene: SKScene {
     var lives:UILabel = UILabel()
     var scoreText:UILabel = UILabel()
     
+    var gameOverLabel = SKLabelNode()
+
     /* Setup your scene here */
     override func didMoveToView(view: SKView) {
         var bg = SKSpriteNode(imageNamed: "water.jpg")
@@ -99,7 +101,7 @@ class GameScene: SKScene {
     }
 
     func showGameOver() {
-        let gameOverLabel = SKLabelNode()
+        gameOverLabel = SKLabelNode()
         
         gameOverLabel.text = "Game Over!"
         gameOverLabel.fontSize = 55
@@ -117,7 +119,6 @@ class GameScene: SKScene {
         lives.text = "Lives: "+String(playerLife)
         scoreText.text = "Score: "+String(score)
         
-        
         level = 1
         levelSpeed = 0.02
         scoreLevelMultiplier = 1.1
@@ -133,16 +134,25 @@ class GameScene: SKScene {
                 shapeNode.removeFromParent();
             }
         }
+        numCircles = 0
     }
     
     /* Called when a touch begins */
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
-            
+
             let location = touch.locationInNode(self)
             
             var touchedNodes = self.nodesAtPoint(location)
             for touchedNode in touchedNodes {
+                
+                if !isPlaying {
+                    if gameOverLabel != nil {
+                        gameOverLabel.removeFromParent()
+                        reset()
+                        return
+                    }
+                }
 
                 if touchedNode.isKindOfClass(SKShapeNode) && touchedNode.name == "circle" {
                     
@@ -238,7 +248,9 @@ class GameScene: SKScene {
                                 unzunz.currentTime = 0
                                 crybaby.play() // :(
                                 isPlaying = false
+
                                 showGameOver()
+
                                 break
                             }
                         }

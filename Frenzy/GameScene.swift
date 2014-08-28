@@ -24,7 +24,6 @@ class GameScene: SKScene {
     let margin:CGFloat = 100
     
     let motionManager = CMMotionManager()
-    let colors = [SKColor.blackColor(), SKColor.brownColor(), SKColor.blueColor()]
     
     var numCircles = 0
     
@@ -122,8 +121,12 @@ class GameScene: SKScene {
             if (numCircles < MAX_NUM_CIRCLES) {
                 let circle = SKShapeNode(circleOfRadius: 15)
                 
-                var colorId = Int(arc4random_uniform(2))
-                circle.fillColor = colors[colorId]
+                circle.fillColor = SKColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+                
+                circle.strokeColor = SKColor.blackColor()
+                circle.lineWidth = 1.0
+                circle.antialiased = true
+                circle.alpha = 1
                 
                 let randX = CGFloat(arc4random_uniform(UInt32(self.frame.width - margin)))
                 let randY = CGFloat(arc4random_uniform(UInt32(self.frame.height - margin)))

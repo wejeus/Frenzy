@@ -73,9 +73,35 @@ class GameScene: SKScene {
         motionManager.startDeviceMotionUpdates()
     }
     
+    func reset() {
+        playerLife = 10
+        score = 0
+        lives.text = "Lives: "+String(playerLife)
+        scoreText.text = "Score: "+String(score)
+        
+        
+        level = 1
+        levelSpeed = 0.02
+        scoreLevelMultiplier = 1.1
+        numKilled = 0
+        
+        isPlaying = true
+        
+        for node in self.children! {
+            if let shapeNode = node as? SKShapeNode {
+                shapeNode.removeFromParent();
+            }
+        }
+    }
+    
     /* Called when a touch begins */
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
+            if !isPlaying {
+                reset()
+                return
+            }
+            
             let location = touch.locationInNode(self)
             
             var touchedNode = self.nodeAtPoint(location)
@@ -120,10 +146,13 @@ class GameScene: SKScene {
             // create new nodes
             if (numCircles < MAX_NUM_CIRCLES) {
                 let circle = SKShapeNode(circleOfRadius: 15)
+                circle.name = "circle"
                 
                 circle.fillColor = SKColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
                 
-                circle.strokeColor = SKColor.blackColor()
+                circle.strokeColor = SKColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+
+                circle.glowWidth = 1.0
                 circle.lineWidth = 1.0
                 circle.antialiased = true
                 circle.alpha = 1
@@ -141,6 +170,8 @@ class GameScene: SKScene {
                 if let shapeNode = node as? SKShapeNode {
                     shapeNode.xScale += levelSpeed
                     shapeNode.yScale += levelSpeed
+
+                    shapeNode.alpha = 1 - 0.75 * (shapeNode.xScale / MAX_CIRCLE_SCALE)
                     
                     // test if circle have exploded
                     

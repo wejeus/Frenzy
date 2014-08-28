@@ -104,26 +104,36 @@ class GameScene: SKScene {
             
             let location = touch.locationInNode(self)
             
-            var touchedNode = self.nodeAtPoint(location)
-            if touchedNode.isKindOfClass(SKShapeNode) {
-                
-                let actionDissolve = SKAction.fadeAlphaTo(0, duration:0.2)
-                
-                let actionRemove = SKAction.runBlock({
-                    touchedNode.removeFromParent()
-                    self.numCircles--;
-                    self.numKilled++
-                    self.score++
-                    // this multiplier is kind of aggressive
-                    // var actualScore:Double = Double(Double(self.score) * self.scoreLevelMultiplier)
-                    // self.score = Int(actualScore)
-                    self.scoreText.text = "Score: "+String(self.score)
+            var touchedNodes = self.nodesAtPoint(location)
+            for touchedNode in touchedNodes {
+
+                if touchedNode.isKindOfClass(SKShapeNode) && touchedNode.name == "circle" {
                     
-                    println("numKilled: \(self.numKilled)")
-                })
-                
-                touchedNode.runAction(actionDissolve)
-                touchedNode.runAction(actionRemove)
+                    let actionDissolve = SKAction.fadeAlphaTo(0, duration:0.2)
+
+                    let animation = SKShapeNode(circleOfRadius: 25)
+                    animation.fillColor = SKColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.3)
+                    animation.name = "animation"
+                    animation.position = location
+                    self.addChild(animation)
+                    
+                    let actionRemove = SKAction.runBlock({
+                        touchedNode.removeFromParent()
+                        self.numCircles--;
+                        self.numKilled++
+                        self.score++
+                        // this multiplier is kind of aggressive
+                        // var actualScore:Double = Double(Double(self.score) * self.scoreLevelMultiplier)
+                        // self.score = Int(actualScore)
+                        self.scoreText.text = "Score: "+String(self.score)
+                        
+                        println("numKilled: \(self.numKilled)")
+                    })
+                    
+                    touchedNode.runAction(actionDissolve)
+                    touchedNode.runAction(actionRemove)
+                    break
+                }
             }
         }
     }
@@ -168,26 +178,37 @@ class GameScene: SKScene {
             // increase size of existing nodes
             for node in self.children {
                 if let shapeNode = node as? SKShapeNode {
-                    shapeNode.xScale += levelSpeed
-                    shapeNode.yScale += levelSpeed
 
-                    shapeNode.alpha = 1 - 0.75 * (shapeNode.xScale / MAX_CIRCLE_SCALE)
+                    if (shapeNode.name == "circle") {
+                        shapeNode.xScale += levelSpeed
+                        shapeNode.yScale += levelSpeed
+
+                        shapeNode.alpha = 1 - 0.75 * (shapeNode.xScale / MAX_CIRCLE_SCALE)
                     
-                    // test if circle have exploded
+                        // test if circle have exploded
                     
-                    if shapeNode.xScale > MAX_CIRCLE_SCALE {
-                        playerLife--
-                        lives.text = "Lives: "+String(playerLife)
-                        wompwomp.play()
-                        shapeNode.fillColor = UIColor.redColor()
-                        shapeNode.removeFromParent()
-                        self.numCircles--;
-                        if playerLife == 0 {
-                            println("game over!")
-                            unzunz.stop() // :o
-                            crybaby.play() // :(
-                            isPlaying = false
-                            break
+                        if shapeNode.xScale > MAX_CIRCLE_SCALE {
+                            playerLife--
+                            lives.text = "Lives: "+String(playerLife)
+                            wompwomp.play()
+                            shapeNode.fillColor = UIColor.redColor()
+                            shapeNode.removeFromParent()
+                            self.numCircles--;
+                            if playerLife == 0 {
+                                println("game over!")
+                                unzunz.stop() // :o
+                                crybaby.play() // :(
+                                isPlaying = false
+                                break
+                            }
+                        }
+                    } else if (shapeNode.name == "animation") {
+                        shapeNode.xScale += 0.5
+                        shapeNode.yScale += 0.5
+
+                        shapeNode.alpha = 0.3 - 0.1 * (shapeNode.xScale / (1.5*MAX_CIRCLE_SCALE))
+                        if (shapeNode.xScale > 1.5*MAX_CIRCLE_SCALE) {
+                            shapeNode.removeFromParent()
                         }
                     }
                 }

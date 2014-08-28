@@ -79,7 +79,6 @@ class GameScene: SKScene {
         lives.text = "Lives: "+String(playerLife)
         scoreText.text = "Score: "+String(score)
         
-        
         level = 1
         levelSpeed = 0.02
         scoreLevelMultiplier = 1.1
@@ -95,6 +94,7 @@ class GameScene: SKScene {
                 shapeNode.removeFromParent();
             }
         }
+        numCircles = 0
     }
     
     /* Called when a touch begins */

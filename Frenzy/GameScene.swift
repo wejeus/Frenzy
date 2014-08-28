@@ -100,15 +100,18 @@ class GameScene: SKScene {
     /* Called when a touch begins */
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
-            if !isPlaying {
-                reset()
-                return
-            }
-            
             let location = touch.locationInNode(self)
             
             var touchedNodes = self.nodesAtPoint(location)
             for touchedNode in touchedNodes {
+                
+                if !isPlaying {
+                    if touchedNode.isKindOfClass(SKLabelNode) {
+                        touchedNode.removeFromParent()
+                        reset()
+                        return
+                    }
+                }
 
                 if touchedNode.isKindOfClass(SKShapeNode) && touchedNode.name == "circle" {
                     
@@ -203,6 +206,9 @@ class GameScene: SKScene {
                                 unzunz.currentTime = 0
                                 crybaby.play() // :(
                                 isPlaying = false
+                                let resetButton = SKLabelNode(text: "Restart?")
+                                resetButton.position = CGPoint(x:self.frame.width/2, y:self.frame.height/2)
+                                self.addChild(resetButton)
                                 break
                             }
                         }

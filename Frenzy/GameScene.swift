@@ -59,15 +59,15 @@ class GameScene: SKScene {
         unzunz.play()
         
         lives = UILabel(frame: CGRectMake(0, 0, 200, 21))
-        lives.backgroundColor = UIColor.blueColor()
+        lives.backgroundColor = UIColor.cyanColor()
         lives.text = "Lives: "+String(playerLife)
-        lives.textColor = UIColor.whiteColor()
+        lives.textColor = UIColor.blackColor()
         self.view.addSubview(lives)
         
         scoreText = UILabel(frame: CGRectMake(200, 0, 400, 21)) // eh
         scoreText.text = "Score: "+String(score)
-        scoreText.textColor = UIColor.whiteColor()
-        scoreText.backgroundColor = UIColor.blueColor()
+        scoreText.textColor = UIColor.blackColor()
+        scoreText.backgroundColor = UIColor.cyanColor()
         self.view.addSubview(scoreText)
         isPlaying = true
         motionManager.startDeviceMotionUpdates()

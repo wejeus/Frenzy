@@ -18,6 +18,7 @@
 		D5838E5619AD272500A51A95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5838E5419AD272500A51A95 /* Main.storyboard */; };
 		D5838E5819AD272500A51A95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5838E5719AD272500A51A95 /* Images.xcassets */; };
 		D5838E6419AD272500A51A95 /* FrenzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5838E6319AD272500A51A95 /* FrenzyTests.swift */; };
+		D5E4AC5419AF8ECD0043917D /* Something Strange.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5E4AC5319AF8ECD0043917D /* Something Strange.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		D5838E5D19AD272500A51A95 /* FrenzyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrenzyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5838E6219AD272500A51A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5838E6319AD272500A51A95 /* FrenzyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenzyTests.swift; sourceTree = "<group>"; };
+		D5E4AC5319AF8ECD0043917D /* Something Strange.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Something Strange.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		D5838E3E19AD272500A51A95 = {
 			isa = PBXGroup;
 			children = (
+				D5E4AC5219AF8ECD0043917D /* Resources */,
 				D5838E4919AD272500A51A95 /* Frenzy */,
 				D5838E6019AD272500A51A95 /* FrenzyTests */,
 				D5838E4819AD272500A51A95 /* Products */,
@@ -125,6 +128,14 @@
 				D5838E6219AD272500A51A95 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5E4AC5219AF8ECD0043917D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D5E4AC5319AF8ECD0043917D /* Something Strange.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				B5AC888A19AE7B0B009A7D2A /* unz.mp3 in Resources */,
 				B5AC888619AE777F009A7D2A /* wompwomp.mp3 in Resources */,
 				D5838E5819AD272500A51A95 /* Images.xcassets in Resources */,
+				D5E4AC5419AF8ECD0043917D /* Something Strange.ttf in Resources */,
 				B55A3F4519AF7FAD0045B10D /* water.jpg in Resources */,
 				B5AC888919AE7B0B009A7D2A /* crybaby.mp3 in Resources */,
 				D5838E4F19AD272500A51A95 /* GameScene.sks in Resources */,

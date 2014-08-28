@@ -58,19 +58,57 @@ class GameScene: SKScene {
         unzunz.prepareToPlay()
         unzunz.play()
         
-        lives = UILabel(frame: CGRectMake(0, 0, 200, 21))
-        lives.backgroundColor = UIColor.cyanColor()
-        lives.text = "Lives: "+String(playerLife)
-        lives.textColor = UIColor.blackColor()
+        lives = UILabel(frame: CGRectMake(5, 0, 200, 21))
+        lives.text = "Lives: " + String(playerLife)
+        lives.textColor = UIColor.whiteColor()
         self.view.addSubview(lives)
         
-        scoreText = UILabel(frame: CGRectMake(200, 0, 400, 21)) // eh
+        scoreText = UILabel(frame: CGRectMake(self.frame.width-100, 0, 400, 21)) // eh
         scoreText.text = "Score: "+String(score)
-        scoreText.textColor = UIColor.blackColor()
-        scoreText.backgroundColor = UIColor.cyanColor()
+        scoreText.textColor = UIColor.whiteColor()
         self.view.addSubview(scoreText)
         isPlaying = true
+        
+
+    
         motionManager.startDeviceMotionUpdates()
+    }
+    
+    func showFaster() {
+        let fasterTextLabel = SKLabelNode()
+        
+        fasterTextLabel.text = "Faster!!"
+        fasterTextLabel.fontName = "Something Strange"
+        fasterTextLabel.fontSize = 40
+        fasterTextLabel.position = CGPoint(x: (self.frame.width/2)+50, y: (self.frame.height/2)-100)
+        fasterTextLabel.color = SKColor.whiteColor()
+
+        self.addChild(fasterTextLabel)
+
+
+        let action = SKAction.scaleTo(80, duration: 6)
+
+        let action2 = SKAction.fadeAlphaTo(0, duration: 1.5)
+        
+        let removeAction = SKAction.runBlock({
+            fasterTextLabel.removeFromParent()
+        })
+        
+        fasterTextLabel.runAction(action2)
+        fasterTextLabel.runAction(SKAction.sequence([action, removeAction]))
+    }
+
+    func showGameOver() {
+        let gameOverLabel = SKLabelNode()
+        
+        gameOverLabel.text = "Game Over!"
+        gameOverLabel.fontSize = 55
+        gameOverLabel.position = CGPoint(x: (self.frame.width/2), y: (self.frame.height/2))
+        gameOverLabel.color = SKColor.whiteColor()
+        
+        self.addChild(gameOverLabel)
+        
+        // TODO: Add NewGame button here
     }
     
     func reset() {
@@ -97,10 +135,6 @@ class GameScene: SKScene {
     /* Called when a touch begins */
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
-            if !isPlaying {
-                reset()
-                return
-            }
             
             let location = touch.locationInNode(self)
             
@@ -140,6 +174,7 @@ class GameScene: SKScene {
     
     // Can also search for sprite in tree! var sprite = self.childNodeWithName("MyJetSprite"); // uses sprite.name = "x" to find (can also use patterns)
     func levelUp() {
+        showFaster()
         level++
         levelSpeed += levelSpeed
         scoreLevelMultiplier += scoreLevelMultiplier
@@ -158,6 +193,7 @@ class GameScene: SKScene {
                 let circle = SKShapeNode(circleOfRadius: 15)
                 circle.name = "circle"
                 
+                // TODO: Kan vi fixa så att färgerna blir mer färgstarka här? De ser så matta och tråkiga ut!!!!!!
                 circle.fillColor = SKColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
                 
                 circle.strokeColor = SKColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
@@ -195,10 +231,10 @@ class GameScene: SKScene {
                             shapeNode.removeFromParent()
                             self.numCircles--;
                             if playerLife == 0 {
-                                println("game over!")
                                 unzunz.stop() // :o
                                 crybaby.play() // :(
                                 isPlaying = false
+                                showGameOver()
                                 break
                             }
                         }

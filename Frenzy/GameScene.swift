@@ -86,6 +86,9 @@ class GameScene: SKScene {
         numKilled = 0
         
         isPlaying = true
+        crybaby.stop()
+        crybaby.currentTime = 0;
+        unzunz.play()
         
         for node in self.children! {
             if let shapeNode = node as? SKShapeNode {
@@ -197,6 +200,7 @@ class GameScene: SKScene {
                             if playerLife == 0 {
                                 println("game over!")
                                 unzunz.stop() // :o
+                                unzunz.currentTime = 0
                                 crybaby.play() // :(
                                 isPlaying = false
                                 break

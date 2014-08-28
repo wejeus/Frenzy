@@ -103,14 +103,12 @@ class GameScene: SKScene {
     func showGameOver() {
         gameOverLabel = SKLabelNode()
         
-        gameOverLabel.text = "Game Over!"
+        gameOverLabel.text = "Game Over! Continue?"
         gameOverLabel.fontSize = 55
         gameOverLabel.position = CGPoint(x: (self.frame.width/2), y: (self.frame.height/2))
         gameOverLabel.color = SKColor.whiteColor()
         
         self.addChild(gameOverLabel)
-        
-        // TODO: Add NewGame button here
     }
     
     func reset() {
@@ -145,15 +143,6 @@ class GameScene: SKScene {
             
             var touchedNodes = self.nodesAtPoint(location)
             for touchedNode in touchedNodes {
-                
-                if !isPlaying {
-                    if gameOverLabel != nil {
-                        gameOverLabel.removeFromParent()
-                        reset()
-                        return
-                    }
-                }
-
                 if touchedNode.isKindOfClass(SKShapeNode) && touchedNode.name == "circle" {
                     
                     let actionDissolve = SKAction.fadeAlphaTo(0, duration:0.2)
@@ -180,6 +169,10 @@ class GameScene: SKScene {
                     touchedNode.runAction(actionDissolve)
                     touchedNode.runAction(actionRemove)
                     break
+                } else if gameOverLabel != nil && touchedNode as NSObject == gameOverLabel {
+                    gameOverLabel.removeFromParent()
+                    reset()
+                    return
                 }
             }
         }

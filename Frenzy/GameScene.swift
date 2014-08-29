@@ -182,7 +182,9 @@ class GameScene: SKScene {
     func levelUp() {
         showFaster()
         level++
-        levelSpeed += levelSpeed
+        if levelSpeed < 0.9 {
+            levelSpeed += 0.01
+        }
         scoreLevelMultiplier += scoreLevelMultiplier
         numKilled = 0
     }

@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
         /* Pick a size for the scene */
         let scene = GameScene()
         // Configure the view.
-        let skView = self.view as SKView
+        let skView = self.view as! SKView
         skView.showsFPS = false
         skView.showsNodeCount = false
         
@@ -25,7 +25,7 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         
         /* Set the scale mode to scale to fit the window */
-        scene.scaleMode = .AspectFill
+        scene.scaleMode = .aspectFill
         
         scene.size = skView.bounds.size
         
@@ -33,24 +33,19 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-    
-    override func supportedInterfaceOrientations() -> Int {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.toRaw())
-        } else {
-            return Int(UIInterfaceOrientationMask.All.toRaw())
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+//    override func shouldAutorotate() -> Bool {
+//        return true
+//    }
+//
+//    override func supportedInterfaceOrientations() -> Int {
+//        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+//            return Int(UIInterfaceOrientationMask.AllButUpsideDown.toRaw())
+//        } else {
+//            return Int(UIInterfaceOrientationMask.All.toRaw())
+//        }
+//    }
+//    
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
 }
